@@ -12,11 +12,21 @@ export default function Page() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">Free llms.txt Generator</h1>
-      <p className="mb-6">
-        <code>llms.txt</code> is a standard file that tells AI assistants
-        (ChatGPT, Claude, Perplexity) what your site is about and which pages
-        matter. Fill in the form — everything runs locally in your browser,
-        nothing is uploaded.
+      <p className="mb-4">
+        <code>llms.txt</code> is an experimental community standard
+        (llmstxt.org): a Markdown file at your site root that describes what
+        your site is about and which pages matter, so AI assistants that
+        support it can understand and cite your content.
+      </p>
+      <p className="mb-6 text-sm text-slate-600">
+        Straight talk: Google Search does not use llms.txt, and adoption by
+        major AI crawlers is still unproven. Treat it as a cheap, five-minute
+        hedge — it can&apos;t hurt, and the file is also a great site summary
+        for humans.{" "}
+        <a href="/llms.txt" className="underline text-blue-700">
+          See our own llms.txt as an example
+        </a>
+        .
       </p>
       <GeneratorForm />
       <h2 className="text-xl font-semibold mt-10 mb-2">How to use it</h2>
