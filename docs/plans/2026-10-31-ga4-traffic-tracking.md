@@ -43,5 +43,6 @@
 ## Rollout verification
 
 - Previous checks with the former shared ID returned HTTP 204 from Google's collection endpoint. This confirmed endpoint responses, not that the selected GA4 property contained those data streams.
-- Recheck each site with its new Measurement ID after deployment and verify incoming data in the selected property's Realtime report.
-- All three public privacy pages returned HTTP 200.
+- After deployment, browser network checks observed a `page_view` request to each new Measurement ID; all three collection requests returned HTTP 204.
+- The selected property's Realtime report currently shows AEO Radar and AgentForge page titles and three `page_view` events. YardCalc's request also returned HTTP 204, but its page title has not appeared in Realtime yet. Google says data collection may take up to 30 minutes to begin; recheck after that window.
+- All three public privacy pages returned HTTP 200 during the initial rollout; their disclosure text was unchanged by this ID correction.
