@@ -28,14 +28,21 @@
 
 **Files:** `G:/ai/projects/agentforge/scripts/next.mjs`, `app/layout.tsx`, `components/GoogleAnalytics.tsx`, `app/privacy/page.tsx`.
 
-- [ ] Add the public Measurement ID to the existing build environment, add a client component that queues `page_view` on pathname changes, and render it from the root layout.
-- [ ] Update the privacy page to disclose Google Analytics page, device, referrer and cookie data, and link to Google's privacy policy.
-- [ ] Build and deploy through the existing `scripts/deploy-gh-pages.mjs`; verify the public site contains the tag.
+- [x] Add the public Measurement ID to the existing build environment, add a client component that queues `page_view` on pathname changes, and render it from the root layout.
+- [x] Update the privacy page to disclose Google Analytics page, device, referrer and cookie data, and link to Google's privacy policy.
+- [x] Build and deploy through the existing `scripts/deploy-gh-pages.mjs`; verify the public site contains the tag.
 
 ### Task 2: AEO Radar
 
 **Files:** `site/src/app/layout.tsx`, `site/src/components/google-analytics.tsx`, `site/src/app/privacy/page.tsx`, `docs/deploy.md` only if its deployment description proves inaccurate.
 
-- [ ] Add the same client-side page-view tracking component to the App Router root layout.
-- [ ] Add a privacy page and a visible footer notice linking to it; describe GA4 and cookies without claiming that generator input is sent as an analytics event.
-- [ ] Build and deploy through the existing `scripts/deploy-gh-pages.mjs`; verify `https://zl1.top/` contains the tag and privacy link.
+- [x] Add the same client-side page-view tracking component to the App Router root layout.
+- [x] Add a privacy page and a visible footer notice linking to it; describe GA4 and cookies without claiming that generator input is sent as an analytics event.
+- [x] Build and deploy through the existing `scripts/deploy-gh-pages.mjs`; verify `https://zl1.top/` contains the tag and privacy link.
+
+## Rollout verification
+
+- `https://zl1.top/` and its `/llms-txt-generator` route sent `page_view` events; the Google Analytics collection endpoint returned HTTP 204.
+- `https://niceman1996.github.io/agentforge/` sent a `page_view` with the `/agentforge/` path; the collection endpoint returned HTTP 204.
+- `https://yardcalc.xyz/` sent a `page_view`; the collection endpoint returned HTTP 204.
+- All three public privacy pages returned HTTP 200.
