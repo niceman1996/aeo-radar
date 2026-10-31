@@ -6,7 +6,7 @@
 
 - 市场 / 语言：英语市场（US 优先），全英文内容
 - 技术栈：Next.js 16（App Router，静态导出 `output: "export"`）+ TypeScript + Tailwind v4 + shadcn/ui + Vitest
-- 部署：Cloudflare Pages（静态导出 `site/out/`）
+- 部署：GitHub Pages；执行流程见 [`docs/deploy.md`](docs/deploy.md)，部署脚本为 `node scripts/deploy-gh-pages.mjs`
 - 仓库：本目录独立 git 仓库
 
 ## 常用命令
