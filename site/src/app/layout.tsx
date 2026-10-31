@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import GoogleAnalytics from "@/components/google-analytics";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -31,8 +32,16 @@ export default function RootLayout({
         </header>
         <main className="flex-1">{children}</main>
         <footer className="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500">
+          <p>
+            This site uses Google Analytics cookies to measure visits. Read our{" "}
+            <a className="underline" href="/privacy">
+              privacy and cookie notice
+            </a>
+            .
+          </p>
           © 2026 AEO Radar. Your site, readable by AI.
         </footer>
+        <GoogleAnalytics />
       </body>
     </html>
   );
