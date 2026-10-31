@@ -1,0 +1,8 @@
+# AEO Radar
+
+> AEO Radar helps website owners check whether AI assistants — ChatGPT, Perplexity and Google AI Overviews — cite their content, and offers free tools and guides for making a site readable by AI search.
+
+## Pages
+
+- [Home](https://zl1.top/): Overview of AEO Radar — AI search visibility tooling and free tools.
+- [Free llms.txt Generator](https://zl1.top/llms-txt-generator): Generate a free llms.txt file in your browser so AI assistants can understand and cite your site. No signup, nothing uploaded.
