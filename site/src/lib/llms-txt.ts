@@ -16,8 +16,8 @@ export interface LlmsTxtInput {
   sections: LlmsTxtSection[];
 }
 
-function isBlank(s: string | undefined): boolean {
-  return !s || s.trim() === "";
+function isBlank(s: string): boolean {
+  return s.trim() === "";
 }
 
 export function generateLlmsTxt(input: LlmsTxtInput): string {
@@ -27,22 +27,22 @@ export function generateLlmsTxt(input: LlmsTxtInput): string {
 
   const lines: string[] = [`# ${input.name}`];
 
-  if (!isBlank(input.description)) {
-    lines.push("", `> ${input.description.trim()}`);
+  const description = input.description.trim();
+  if (description) {
+    lines.push("", `> ${description}`);
   }
 
-  if (!isBlank(input.details)) {
-    lines.push("", input.details.trim());
+  const details = input.details?.trim();
+  if (details) {
+    lines.push("", details);
   }
 
   for (const section of input.sections) {
     if (section.links.length === 0) continue;
     lines.push("", `## ${section.title}`);
     for (const link of section.links) {
-      const desc = isBlank(link.description)
-        ? ""
-        : `: ${link.description.trim()}`;
-      lines.push(`- [${link.title}](${link.url})${desc}`);
+      const desc = link.description?.trim();
+      lines.push(`- [${link.title}](${link.url})${desc ? `: ${desc}` : ""}`);
     }
   }
 
