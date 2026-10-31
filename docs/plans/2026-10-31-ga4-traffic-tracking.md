@@ -2,11 +2,11 @@
 
 **Goal:** Record page views for the two already published sites that are missing tracking: AgentForge and AEO Radar (`zl1.top`).
 
-**Architecture:** Reuse the existing GA4 Measurement ID `G-D8MHQP9BK9` so all three sites appear in the existing Analytics resource. Send page views on initial load and App Router path changes. Custom domains are separated by hostname; AgentForge is identified by its `/agentforge/` path on the shared `niceman1996.github.io` hostname. Do not send tool form values as custom events.
+**Architecture:** Use three Web data streams in the existing GA4 property, with a distinct Measurement ID for each site: YardCalc `G-7H9N1VFV2E`, AEO Radar `G-1BNGCZGEDY`, and AgentForge `G-R9SBMML584`. Send page views on initial load and App Router path changes. Custom domains are separated by hostname; AgentForge is identified by its `/agentforge/` path on the shared `niceman1996.github.io` hostname. Do not send tool form values as custom events.
 
 **Tech Stack:** Next.js App Router, `next/script`, static GitHub Pages exports.
 
-**Spec:** Existing YardCalc setup in `docs/analytics-setup.md` in `seo-tool-sites`; no additional Google Analytics property is needed.
+**Spec:** Existing YardCalc setup in `docs/analytics-setup.md` in `seo-tool-sites`; no additional Google Analytics property is needed. The selected property initially had no data streams, so the former shared ID `G-D8MHQP9BK9` was not connected to it. Three streams were created in the selected property.
 
 ## Global Constraints
 
@@ -17,7 +17,7 @@
 
 ## Review Focus
 
-- All sites send events to the same Measurement ID and remain distinguishable by hostname or, for AgentForge, the `/agentforge/` path.
+- Each site sends events to its own stream ID and remains identifiable by data stream; hostname or the `/agentforge/` path can further distinguish pages.
 - Client-side route changes send page views after the initial page load.
 - The analytics code does not include content entered into the AEO Radar generator.
 - Privacy copy no longer claims that analytics or tracking is absent.
@@ -42,7 +42,6 @@
 
 ## Rollout verification
 
-- `https://zl1.top/` and its `/llms-txt-generator` route sent `page_view` events; the Google Analytics collection endpoint returned HTTP 204.
-- `https://niceman1996.github.io/agentforge/` sent a `page_view` with the `/agentforge/` path; the collection endpoint returned HTTP 204.
-- `https://yardcalc.xyz/` sent a `page_view`; the collection endpoint returned HTTP 204.
+- Previous checks with the former shared ID returned HTTP 204 from Google's collection endpoint. This confirmed endpoint responses, not that the selected GA4 property contained those data streams.
+- Recheck each site with its new Measurement ID after deployment and verify incoming data in the selected property's Realtime report.
 - All three public privacy pages returned HTTP 200.
