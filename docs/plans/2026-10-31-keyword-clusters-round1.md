@@ -86,10 +86,48 @@
 | aeo for small business | C | 自有工具 | 匹配 $9-19 价位 |
 | ecommerce ai search visibility | C | 自有工具 | |
 
-## 下一步验证计划
+## 验证结果（2026-10-31 SERP 实测）
 
-1. **Trends + Glimpse**：逐簇确认上升/平稳/衰退，淘汰下降词
-2. **LowFruits / KWFinder**：量级 + KD 标注（KD<20 优先）；没量级数据的词看 Trends 相对热度
-3. **手动 SERP 抽查**：每簇抽 2-3 词，第 1 页出现论坛/小站/旧内容 → 标记"可做"；全大站 → 移入观察区
-4. **确定首发 10 词**：按「热度 × 低竞争 × 变现强度」排序，作为内容站前 10 篇 + 工具 MVP 检测词库
-5. 验证结果回填本表，并产出 `2026-XX-XX-content-launch.md` 执行计划
+> 方法说明：Google Trends 对本机 IP 限流（429），趋势方向改用既有研究数据（Exploding Topics 99x 增长等）；竞争度用逐词搜索结果实测（看第 1 页是谁在排）。**量级数字仍缺** —— 部署后用 GSC + 付费工具回填。
+
+### 簇级判定
+
+| 簇 | 判定 | 第 1 页实况 |
+|---|---|---|
+| 1 AEO/GEO 概念 | ⚠️ 头部词放弃 | HubSpot / Neil Patel / Ahrefs / Frase 全占 |
+| 2 平台特定 | ✅ 长尾可做 | 指南型内容多但同质化，缺实操工具页 |
+| 3 工具寻找 | ⚠️ 分化 | `ai visibility checker` 被 Ahrefs/Amplitude 免费工具占死；`llms.txt generator` 有 6+ 工具但**专用小站 llmstxtgenerate.com 也在第 1 页** → 单体工具站可入场 |
+| 4 竞品近替 | ✅ 机会明确 | 全是评测站汇总页（SitePoint/SE Ranking/industry-lens），无一线厂商认真做；affiliate 现金牛 |
+| 5 长尾 how-to | ✅ 最强信号 | 「流量暴跌」恐慌需求被证实：AI Overviews 使第 1 位 CTR 掉 ~34.5%，73% B2B 站报告显著损失；现有内容全是博客指南，无工具承接 |
+| 6 指标与报告 | ➖ 待定 | 未单独实测 |
+| 7 垂直细分 | ✅ 中低竞争 | Shopify/Salsify 品牌博客在场，无专门工具站 |
+
+### 关键情报：llms.txt 效果存疑（诚实定位）
+
+- Google 官方：搜索不使用 llms.txt，对排名/AI Overviews 无影响
+- 主流 AI 爬虫无明确采纳证据（r/TechSEO 实测爬虫日志无变化）
+- Semrush 定性："低成本实验"；Neil Patel："未来对冲"
+- **行动**：工具保留（免费引流 + 竞争可入场），但工具页文案不得夸大 —— 改为 "a cheap hedge / experimental standard"；内容站写《llms.txt 值不值得做》这类诚实测评反而能建立信任
+
+### 首发关键词（按 需求强度 × 实测竞争 × 变现协同 排序）
+
+| # | 关键词 | 簇 | 角色 | 依据 |
+|---|---|---|---|---|
+| 1 | why did my website traffic drop ai overviews | 5 | 内容旗舰篇 | 恐慌需求最强，无工具竞品 |
+| 2 | how to get cited by chatgpt | 2 | 内容 + 工具导流 | 工具意图强 |
+| 3 | how to get cited in ai overviews | 2 | 内容 + 工具导流 | 同上，Google 官方文档外溢需求 |
+| 4 | llms.txt generator | 3 | 已上线工具页 | 小站可排名；文案需诚实化 |
+| 5 | is llms.txt worth it | 5 | 诚实测评文 | 现有内容一边倒，反向定位建信任 |
+| 6 | profound alternatives | 4 | 对比页（联盟现金牛） | 汇总页同质化，价格核实类内容缺 |
+| 7 | otterly ai review | 4 | 测评页（联盟） | $29 档用户外溢 |
+| 8 | best ai visibility tools | 4 | 联盟枢纽页 | 收口所有对比流量 |
+| 9 | aeo for ecommerce | 7 | 垂直内容 | 无专门工具站，差异化 |
+| 10 | ai visibility score | 6 | 工具功能锚点词 | 为 MVP 输出指标命名 |
+
+**放弃清单**（头部竞争实测过高）：answer engine optimization、ai visibility checker、how to rank in ai overviews、aeo tool。
+
+### 待办
+
+1. 工具页文案诚实化（llms.txt 效果表述）
+2. 部署后：GSC 收录 + 付费工具回填量级/KD
+3. 按首发词表产出 `content-launch` 执行计划（前 10 篇内容）
