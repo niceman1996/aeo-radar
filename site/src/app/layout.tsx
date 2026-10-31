@@ -6,7 +6,10 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aeoradar.com"), // TODO: 域名确定后更新
+  metadataBase: new URL("https://zl1.top"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "AEO Radar — Is Your Site Visible to AI Search?",
     template: "%s | AEO Radar",

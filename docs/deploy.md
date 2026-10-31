@@ -14,7 +14,7 @@
 ## 红线
 
 - **域名注册、Cloudflare/GitHub 账号操作由用户本人完成**，agent 不代管 DNS、账号或支付信息。
-- 域名确定后更新 `site/src/app/layout.tsx` 中的 `metadataBase`（当前占位 `https://aeoradar.com`）。
+- 域名：`zl1.top`（已写入 `site/src/app/layout.tsx` 的 `metadataBase` 与 `site/public/llms.txt`）。DNS 解析、Cloudflare 绑定由用户本人操作。
 
 ## 本地预览构建产物
 

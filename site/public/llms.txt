@@ -4,5 +4,5 @@
 
 ## Pages
 
-- [Home](https://aeoradar.com/): Overview of AEO Radar — AI search visibility tooling and free tools.
-- [Free llms.txt Generator](https://aeoradar.com/llms-txt-generator): Generate a free llms.txt file in your browser so AI assistants can understand and cite your site. No signup, nothing uploaded.
+- [Home](https://zl1.top/): Overview of AEO Radar — AI search visibility tooling and free tools.
+- [Free llms.txt Generator](https://zl1.top/llms-txt-generator): Generate a free llms.txt file in your browser so AI assistants can understand and cite your site. No signup, nothing uploaded.
