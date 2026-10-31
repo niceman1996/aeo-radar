@@ -5,14 +5,20 @@
 ## 快速事实
 
 - 市场 / 语言：英语市场（US 优先），全英文内容
-- 技术栈：待定（倾向 Next.js / Astro 静态内容 + 轻量 API 后端）
-- 部署：待定（倾向 Vercel / Cloudflare Pages）
+- 技术栈：Next.js 16（App Router，静态导出 `output: "export"`）+ TypeScript + Tailwind v4 + shadcn/ui + Vitest
+- 部署：Cloudflare Pages（静态导出 `site/out/`）
 - 仓库：本目录独立 git 仓库
 
 ## 常用命令
 
 ```bash
-# 待技术栈确定后补充
+# 站点开发（均在 site/ 目录下执行）
+cd site
+npm install        # 安装依赖
+npm run dev        # 本地开发 http://localhost:3000
+npm test           # Vitest 单测
+npm run build      # 静态导出产出 site/out/
+npm run lint       # ESLint
 ```
 
 ## 目录说明
